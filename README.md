@@ -1,2 +1,2 @@
 # CPPtricks
-cpp tricks
+three specific scenarios where using this is either mandatory
