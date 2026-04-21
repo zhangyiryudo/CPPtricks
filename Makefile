@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++20 -Wall
 TARGET = main
 SRC = main.cpp
-HEADERS = mustUseThisPointer.h
+HEADERS = mustUseThisPointer.h std_function.h
 
 $(TARGET): $(SRC) $(HEADERS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC) $(LDLIBS)

@@ -56,3 +56,15 @@ public:
         return *this; // Return the current object to allow chaining
     }
 };
+
+
+// int main() {
+//     std::cout << "--main()" << std::endl;
+//     Derived<int> d;
+//     d.bar();
+
+//     Builder().append("Hello, ").append("world!");
+//     MyScanner<char>().run();
+
+//     return 0;
+// }
