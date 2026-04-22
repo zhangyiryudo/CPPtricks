@@ -12,8 +12,10 @@ int main() {
     //A. Lambdas (Capture and No-Capture)
     int multiplier = 3;
     std::function<int(int)> multiply = [multiplier](int x) { return x * multiplier;  };
+    std::cout << multiply(10) << std::endl; // 30
 
     //C. Member Functions
     Calculator calc;
     std::function<int(int)> addOffsetFunc = [&calc](int x) { return calc.addOffset(x); };
+    std::cout << addOffsetFunc(22) << std::endl; // 22 + 10 = 32
 }
