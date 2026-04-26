@@ -25,3 +25,24 @@ void test_std_function() {
     std::function<int(int)> addOffsetFunc = [&calc](int x) { return calc.addOffset(x); };
     std::cout << addOffsetFunc(22) << std::endl; // 22 + 10 = 32
 }
+
+
+//store C++ lambdas in a std::vector
+// Instead, you must use std::function to provide a type-erased wrapper that can hold any callable object
+void store_lambda_in_vector() {
+    // A vector that stores functions taking an int and returning void
+    std::vector<std::function<void(int)>> tasks;
+
+    // Adding lambdas to the vector
+    tasks.push_back([](int x) { 
+        std::cout << "Task 1: Square is " << x * x << std::endl; 
+    });
+    tasks.push_back([](int x) { 
+        std::cout << "Task 2: Doubled is " << x * 2 << std::endl; 
+    });
+
+    // Executing the lambdas
+    for (const auto& task : tasks) {
+        task(5);
+    }
+}

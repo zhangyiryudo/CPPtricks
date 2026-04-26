@@ -7,5 +7,6 @@
 int main() {
     test_std_function();
     printParsedFIXFields();
+    store_lambda_in_vector();
     return 0;
 }
