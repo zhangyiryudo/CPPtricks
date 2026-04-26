@@ -41,7 +41,8 @@ public:
     void push_back(const T& ele) {
         // If we are at exactly a chunk boundary, allocate a new chunk
         if (m_size % CHUNK_SIZE == 0) {
-            chunks.push_back(std::make_unique<T[]>(CHUNK_SIZE));
+            chunks.push_back(make_unique<T[]>(CHUNK_SIZE));
+            // chunks.push_back(new T[CHUNK_SIZE]);
         }
         
         // Calculate where the element goes and place it
@@ -59,6 +60,7 @@ public:
     size_t size() const { return m_size; }
 
 private:
-    std::vector<std::unique_ptr<T[]>> chunks; 
+    std::vector<unique_ptr<T[]>> chunks; 
+    // std::vector<T*> chunks; 
     size_t m_size = 0; // We have to track total size manually now
 };
