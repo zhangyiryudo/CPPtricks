@@ -3,6 +3,7 @@
 #include "std_function.h"
 #include "parse_FIX_zero_copy.h"
 #include "string_SSO.h"
+#include "StableVector.h"
 using namespace std;
 
 int main() {
@@ -26,5 +27,12 @@ int main() {
 
     cout << "sizeof(SSOString): " << sizeof(SSOString) << endl; // 24 bytes due to SSO optimization
     cout << "sizeof(SsoSimpleString): " << sizeof(SsoSimpleString) << endl; // 32 bytes
+
+    StableVector<int> stableVec;
+    stableVec.push_back(5);
+    stableVec.push_back(10);
+    std::cout << "Element at index 0: " << stableVec[0] << std::endl;
+    std::cout << "Element at index 1: " << stableVec[1] << std::endl;
+
     return 0;
 }
