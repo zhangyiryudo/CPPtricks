@@ -8,10 +8,12 @@
 #include "all_string_comp.h"
 #include "StringCurrencySSO.h"
 #include "atomic_usage.h"
+#include "type_list.h"
 using namespace std;
 
 int main() {
-    test_compare_exchange();
+    test_my_type_list();
+    return 0;
 }
 
 // int main() {
